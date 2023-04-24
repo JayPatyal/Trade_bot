@@ -117,3 +117,10 @@ order.orderType = "LMT"
 order.lmtPrice = "130.00"
 order.eTradeOnly = ""
 order.firmQuoteOnly = ""
+
+
+app.nextorderId += 1
+
+app.placeOrder(app.nextorderId, stock_contract("AAPL"), order)
+
+time.sleep(5)
