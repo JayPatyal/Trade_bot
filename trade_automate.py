@@ -109,3 +109,11 @@ while True:
     else:
         print('waiting for connection')
         time.sleep(1)
+        
+order = Order()
+order.action = "BUY"
+order.totalQuantity = 10
+order.orderType = "LMT"
+order.lmtPrice = "130.00"
+order.eTradeOnly = ""
+order.firmQuoteOnly = ""
