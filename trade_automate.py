@@ -124,3 +124,9 @@ app.nextorderId += 1
 app.placeOrder(app.nextorderId, stock_contract("AAPL"), order)
 
 time.sleep(5)
+
+print('cancelling order')
+app.cancelOrder(app.nextorderId)
+
+time.sleep(5)
+app.disconnect()
