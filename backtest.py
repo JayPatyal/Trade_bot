@@ -19,3 +19,6 @@ def openbb_data_to_bt_data(symbol, start_date, end_date):
         todate=dt.datetime.strptime(end_date, '%Y-%m-%d')
     )
 
+def last_day_of_month(any_day):
+    next_month = any_day.replace(day=28) + dt.timedelta(days=4)
+    return (next_month - dt.timedelta(days=next_month.day)).day
