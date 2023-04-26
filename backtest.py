@@ -29,3 +29,6 @@ class MonthlyFlows(bt.Strategy):
         ("end_of_month", 23),
         ("start_of_month", 7),
     )
+    def __init__(self):
+        self.order = None
+        self.dataclose = self.datas[0].close
