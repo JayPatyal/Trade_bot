@@ -22,3 +22,10 @@ def openbb_data_to_bt_data(symbol, start_date, end_date):
 def last_day_of_month(any_day):
     next_month = any_day.replace(day=28) + dt.timedelta(days=4)
     return (next_month - dt.timedelta(days=next_month.day)).day
+
+class MonthlyFlows(bt.Strategy):
+    
+    params = (
+        ("end_of_month", 23),
+        ("start_of_month", 7),
+    )
