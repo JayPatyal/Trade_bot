@@ -36,3 +36,27 @@ class MonthlyFlows(bt.Strategy):
     def notify_order(self, order):
         # No more orders
         self.order = None 
+        
+    def next(self):
+        
+        # Get today's date, day of month, and 
+        # last day of current month
+        dt_ = self.datas[0].datetime.date(0)
+        dom = dt_.day
+        ldm = last_day_of_month(dt_)
+        
+        # If an order is pending, exit
+        if self.order:
+            return
+        
+        # Check if we are in the market
+        if not self.position:
+            
+            # We're in the first week of the month, sell
+            if dom <= self.params.start_of_month:
+
+                # Sell the entire portfolio
+                self.order = self.order_target_percent(target=-1)
+                
+                print(f"ELL at {self.data_close[0]}")
+            
