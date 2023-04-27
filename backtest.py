@@ -66,3 +66,15 @@ class MonthlyFlows(bt.Strategy):
                 self.order = self.order_target_percent(target=1)
                 
                 print(f"BUY at {self.data_close[0]}")
+                
+        else:
+            
+            # If we're long
+            if self.position.size > 0:
+                
+                # And not within the last week of the month, close
+                if not self.params.end_of_month <= dom <= ldm:
+                    
+                    print(f"CLOSE at {self.data_close[0]}")
+
+                    self.order = self.order_target_percent(target=0.0)
