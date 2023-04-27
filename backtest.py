@@ -32,3 +32,7 @@ class MonthlyFlows(bt.Strategy):
     def __init__(self):
         self.order = None
         self.dataclose = self.datas[0].close
+        
+    def notify_order(self, order):
+        # No more orders
+        self.order = None 
