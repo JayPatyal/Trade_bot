@@ -60,3 +60,9 @@ class MonthlyFlows(bt.Strategy):
                 
                 print(f"ELL at {self.data_close[0]}")
             
+            if dom >= self.params.end_of_month:
+
+                # Buy the entire portfolio
+                self.order = self.order_target_percent(target=1)
+                
+                print(f"BUY at {self.data_close[0]}")
