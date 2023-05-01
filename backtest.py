@@ -98,3 +98,14 @@ cerebro = bt.Cerebro(stdstats=False)
 
 cerebro.adddata(data)
 cerebro.broker.setcash(1000.0)
+
+cerebro.addstrategy(MonthlyFlows)
+
+cerebro.addobserver(bt.observers.Value)
+
+cerebro.addanalyzer(
+    bt.analyzers.Returns, _name="returns"
+)
+cerebro.addanalyzer(
+    bt.analyzers.TimeReturn, _name="time_return"
+)
