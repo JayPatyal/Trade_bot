@@ -93,3 +93,8 @@ data = openbb_data_to_bt_data(
     start_date="2002-01-01",
     end_date="2022-06-30"
 )
+
+cerebro = bt.Cerebro(stdstats=False)
+
+cerebro.adddata(data)
+cerebro.broker.setcash(1000.0)
