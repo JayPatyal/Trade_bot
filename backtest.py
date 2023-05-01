@@ -87,3 +87,9 @@ class MonthlyFlows(bt.Strategy):
 
                     # self.order = self.close()
                     self.order = self.order_target_percent(target=0.0)
+                    
+data = openbb_data_to_bt_data(
+    "TLT", 
+    start_date="2002-01-01",
+    end_date="2022-06-30"
+)
