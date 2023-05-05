@@ -109,3 +109,7 @@ cerebro.addanalyzer(
 cerebro.addanalyzer(
     bt.analyzers.TimeReturn, _name="time_return"
 )
+
+backtest_result = cerebro.run()
+
+returns_dict = backtest_result[0].analyzers.time_return.get_analysis()
