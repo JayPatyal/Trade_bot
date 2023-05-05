@@ -113,3 +113,11 @@ cerebro.addanalyzer(
 backtest_result = cerebro.run()
 
 returns_dict = backtest_result[0].analyzers.time_return.get_analysis()
+
+returns_df = (
+    pd.DataFrame(
+        list(returns_dict.items()),
+        columns = ["date", "return"]
+    )
+    .set_index("date")
+)
