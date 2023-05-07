@@ -121,3 +121,9 @@ returns_df = (
     )
     .set_index("date")
 )
+
+bench = openbb.stocks.load(
+    "TLT",
+    start_date="2002-01-01",
+    end_date="2022-06-30"
+)["Adj Close"]
