@@ -127,3 +127,10 @@ bench = openbb.stocks.load(
     start_date="2002-01-01",
     end_date="2022-06-30"
 )["Adj Close"]
+
+qs.reports.metrics(
+    returns_df,
+    benchmark=bench,
+    mode="full"
+)
+
